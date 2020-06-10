@@ -1,0 +1,38 @@
+<div class=" background">
+    <div class="alert alert-danger pt-5" *ngIf='err'>{{err}}</div>
+    <div class="alert alert-success pt-5" *ngIf='success'>{{success}}</div>
+<div class="col-md-2 offset-4 pt-5">
+    <br>
+<form #addNewshowForm='ngForm' (ngSubmit)='addshow(addNewshowForm)'>
+    <div class="form-group">
+        <label for="showId" style="color:white ;font-size: 24px;">Show Id</label>
+        <input type="text" name="showId" id="showId" #showId='ngModel' ngModel class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="showStartTime"style="color:white ;font-size: 24px;">Show Start-Time</label>
+        <input type="text" name="showStartTime" id="showStartTime" #showStartTime='ngModel' ngModel class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="showEndTime"style="color:white ;font-size: 24px;">Show End-Time</label>
+        <input type="text" name="showEndTime" id="showEndTime" #showEndTime='ngModel' ngModel class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="showName"style="color:white ;font-size: 24px;">Show Name</label>
+        <input type="text" name="showName" id="showName" #showName='ngModel' ngModel class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="screenId"style="color:white ;font-size: 24px;">Screen-Id</label>
+        <input type="text" name="screenId" id="screenId" #screenId='ngModel' ngModel class="form-control"> 
+    </div>
+    <div class="form-group">
+        <label for="theaterId"style="color:white ;font-size: 24px;">Theater-Id</label>
+        <input type="text" name="theaterId" id="theaterId" #theaterId='ngModel' ngModel class="form-control">
+    </div>
+   
+    <button type="submit" class="btn btn-primary">SUBMIT</button>
+</form>
+
+
+
+</div>
+</div>

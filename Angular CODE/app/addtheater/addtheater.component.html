@@ -1,0 +1,33 @@
+<div class=" background">
+    <div class="alert alert-danger pt-5" *ngIf='err'>{{err}}</div>
+    <div class="alert alert-success pt-5" *ngIf='success'>{{success}}</div>
+<div class="col-md-2 offset-4 pt-5">
+    <br>
+<form #addNewTheaterForm='ngForm' (ngSubmit)='addNewTheater(addNewTheaterForm)'>
+    <div class="form-group">
+        <label for="theaterId" style="color:white ;font-size: 24px;">Theater Id</label>
+        <input type="text" name="theaterId" id="theaterId" #theaterId='ngModel' ngModel class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="theaterName"style="color:white ;font-size: 24px;">Theater Name</label>
+        <input type="text" name="theaterName" id="theaterName" #theaterName='ngModel' ngModel class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="theaterCity"style="color:white ;font-size: 24px;">Theater City</label>
+        <input type="text" name="theaterCity" id="theaterCity" #theaterCity='ngModel' ngModel class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="managerName"style="color:white ;font-size: 24px;">Manager's Name</label>
+        <input type="text" name="managerName" id="managerName" #managerName='ngModel' ngModel class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="managerContact"style="color:white ;font-size: 24px;">Manager Contact</label>
+        <input type="text" name="managerContact" id="managerContact" #managerContact='ngModel' ngModel class="form-control"> 
+    </div>
+    <button type="submit" class="btn btn-primary">SUBMIT</button>
+</form>
+
+
+
+</div>
+</div>

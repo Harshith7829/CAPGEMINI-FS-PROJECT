@@ -1,0 +1,103 @@
+<div class=" background">
+    <div class="alert alert-danger pt-5" *ngIf='err'>{{err}}</div>
+    <div class="alert alert-success pt-5" *ngIf='success'>{{success}}</div>
+    <div class="col-md-2 offset-4 pt-5">
+        <br>
+        <form #addNewMovieForm='ngForm' (ngSubmit)='addNewMovie(addNewMovieForm)'>
+            <div class="form-group">
+                <label for="movieId" style="color:white ;font-size: 24px;">Movie Id</label>
+                <input type="text" name="movieId" id="movieId" #movieId='ngModel' ngModel class="form-control">
+
+            </div>
+            <div class="form-group">
+                <label for="movieName" style="color:white ;font-size: 24px;">Movie Name</label>
+                <input type="text" name="movieName" id="movieName" #movieName='ngModel' ngModel class="form-control"
+                    required minlength="3" maxlength="20">
+                <div *ngIf='movieName.touched && movieName.invalid'>
+                    <div class="alert alert-danger" *ngIf='movieName.errors.required'>
+                        This field is mandatory
+                    </div>
+                    <div class="alert alert-danger" *ngIf='movieName.errors.minlength'>
+                        minimum 3 characters are required
+                    </div>
+                    <div class="alert alert-danger" *ngIf='movieName.errors.pattern'>
+                        This accepts only characters [ex:qwerty_PS]
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="movieGenre" style="color:white ;font-size: 24px;">Movie Genre</label>
+                <input type="text" name="movieGenre" id="movieGenre" #movieGenre='ngModel' ngModel class="form-control" 
+                 required minlength="3" >
+                <div *ngIf='movieGenre.touched && movieGenre.invalid'>
+                    <div class="alert alert-danger" *ngIf='movieGenre.errors.required'>
+                        This field is mandatory
+                    </div>
+                    <div class="alert alert-danger" *ngIf='movieGenre.errors.minlength'>
+                        minimum 3 characters are required
+                    </div>
+                    <!-- <div class="alert alert-danger" *ngIf='movieGenre.errors.pattern'>
+                        This accepts only characters [ex:qwerty_PS]
+                    </div> -->
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="movieDirector" style="color:white ;font-size: 24px;">Movie Director</label>
+                <input type="text" name="movieDirector" id="movieDirector" #movieDirector='ngModel' ngModel
+                    class="form-control"  required minlength="3" maxlength="20">
+                <div *ngIf='movieDirector.touched && movieDirector.invalid'>
+                    <div class="alert alert-danger" *ngIf='movieDirector.errors.required'>
+                        This field is mandatory
+                    </div>
+                    <div class="alert alert-danger" *ngIf='movieDirector.errors.minlength'>
+                        minimum 3 characters are required
+                    </div>
+                    <div class="alert alert-danger" *ngIf='movieDirector.errors.pattern'>
+                        This accepts only characters [ex:qwerty_PS]
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="movieLength" style="color:white ;font-size: 24px;">Movie Length</label>
+                <input type="text" name="movieLength" id="movieLength" #movieLength='ngModel' ngModel
+                    class="form-control" required minlength="1" maxlength="2" pattern="[0-9]">
+                    <div *ngIf='movieLength.touched && movieLength.invalid'>
+                        <div class="alert alert-danger" *ngIf='movieLength.errors.required'>
+                            This field is mandatory
+                        </div>
+                        <div class="alert alert-danger" *ngIf='movieLength.errors.minlength'>
+                            minimum 3 numbers is required
+                        </div>
+                        <div class="alert alert-danger" *ngIf='movieLength.errors.pattern'>
+                            This accepts only numbers
+                        </div>
+                    </div>
+            </div>
+            <div class="form-group">
+                <label for="movieLanguages" style="color:white ;font-size: 24px;">Movie Languages</label>
+                <input type="text" name="movieLanguages" id="movieLanguages" #movieLanguages='ngModel' ngModel
+                    class="form-control"  required minlength="3" maxlength="20">
+                <div *ngIf='movieLanguages.touched && movieLanguages.invalid'>
+                    <div class="alert alert-danger" *ngIf='movieLanguages.errors.required'>
+                        This field is mandatory
+                    </div>
+                    <div class="alert alert-danger" *ngIf='movieLanguages.errors.minlength'>
+                        minimum 3 characters are required
+                    </div>
+                    <div class="alert alert-danger" *ngIf='movieLanguages.errors.pattern'>
+                        This accepts only characters [ex:qwerty_PS]
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="movieReleaseDate" style="color:white ;font-size: 24px;">Movie ReleaseDate</label>
+                <input type="date" name="movieReleaseDate" id="movieReleaseDate" #movieReleaseDate='ngModel' ngModel
+                    class="form-control" required min="{{today | date: 'yyyy-MM-dd'}}">
+            </div>
+            <button type="submit" class="btn btn-primary">SUBMIT</button>
+        </form>
+
+
+
+    </div>
+</div>
